@@ -28,6 +28,7 @@ jobs:
       - name: Python Unit Test
         uses: onichandame/python-test-action@0.0.0
         with:
+          path: '.' 
           deps_list: requirements.txt
           test_dir: test
           pattern: test_*.py
