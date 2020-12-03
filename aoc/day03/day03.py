@@ -1,22 +1,17 @@
-def transpose_matrix(data: tuple) -> tuple:
-    return tuple(map(tuple, zip(*data)))
-
-
 def process_input(filename: str) -> tuple:
     with open(filename) as f:
-        data = [tuple(line.strip()) for line in f]
-        return transpose_matrix(data)
+        return tuple([tuple(line.strip()) for line in f])
 
 
 def count_trees_on_slope(filename: str, slope: tuple) -> int:
     area_map = process_input(filename)
-    max_x, max_y = len(area_map), len(area_map[0])
+    max_x, max_y = len(area_map[0]), len(area_map)
 
     x, y = 0, 0
     tree_count = 0
     while y < max_y - 1:
         x, y = (x + slope[0]) % max_x, y + slope[1]
-        if area_map[x][y] == '#':
+        if area_map[y][x] == '#':
             tree_count = tree_count + 1
 
     return tree_count
