@@ -8,7 +8,7 @@ def process_input_pair(pair: list) -> dict:
 
 def process_input(filename: str) -> list:
     with open(filename) as f:
-        return [process_input_pair(line.split(': ')) for line in f.read().split('\n')]
+        return [process_input_pair(line.split(': ')) for line in f]
 
 
 def check_password_policy_pt1(password: str, policy_char: str, policy_min: int, policy_max: int) -> bool:
