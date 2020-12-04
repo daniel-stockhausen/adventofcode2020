@@ -21,4 +21,4 @@ class TestDay02(unittest.TestCase):
         self.assertEqual(391, count_valid_passwords_pt2(file_input))
 
     def test_02_main(self):
-        self.assertEqual(512, os.system("python aoc.day02"))
+        self.assertEqual(0, os.system("python -m aoc.day02.day02"))

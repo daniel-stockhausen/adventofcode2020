@@ -21,4 +21,4 @@ class TestDay03(unittest.TestCase):
         self.assertEqual(3952291680, multiply_trees_on_slopes(file_input, ((1, 1), (3, 1), (5, 1), (7, 1), (1, 2))))
 
     def test_03_main(self):
-        self.assertEqual(512, os.system("python aoc.day03"))
+        self.assertEqual(0, os.system("python -m aoc.day03.day03"))

@@ -21,4 +21,4 @@ class TestDay01(unittest.TestCase):
         self.assertEqual(232508760, product_of_3_summands_of_sum(file_input, 2020))
 
     def test_01_main(self):
-        self.assertEqual(512, os.system("python aoc.day01"))
+        self.assertEqual(0, os.system("python -m aoc.day01.day01"))

@@ -37,8 +37,8 @@ def count_valid_passwords_pt2(filename: str) -> int:
 
 
 if __name__ == '__main__':
-    part1 = count_valid_passwords_pt1('../../input/day02.txt')
+    part1 = count_valid_passwords_pt1('input/day02.txt')
     print(f"Part 1: {part1}")
 
-    part2 = count_valid_passwords_pt2('../../input/day02.txt')
+    part2 = count_valid_passwords_pt2('input/day02.txt')
     print(f"Part 2: {part2}")
