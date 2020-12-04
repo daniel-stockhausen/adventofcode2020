@@ -2,8 +2,8 @@ import unittest
 
 from aoc.day03.day03 import count_trees_on_slope, multiply_trees_on_slopes
 
-file_input = '../input/day03.txt'
-file_example = '../input/day03-example.txt'
+file_input = 'input/day03.txt'
+file_example = 'input/day03-example.txt'
 
 
 class TestDay03(unittest.TestCase):
