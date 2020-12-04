@@ -20,5 +20,3 @@ jobs:
       #    python-version: '3.8'
       - name: unittest
         uses: onichandame/python-test-action@master
-        with:
-          path: ./test
