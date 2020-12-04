@@ -26,4 +26,4 @@ class TestDay04(unittest.TestCase):
         self.assertEqual(147, count_passports_with_required_keys_and_valid_values(file_input))
 
     def test_04_main(self):
-        self.assertEqual(0, os.system("python -m aoc.day03.day04"))
+        self.assertEqual(0, os.system("python -m aoc.day04.day04"))
