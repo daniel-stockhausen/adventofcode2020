@@ -21,4 +21,4 @@ jobs:
       - name: unittest
         uses: onichandame/python-test-action@master
         with:
-          path: ./test
+          path: test
