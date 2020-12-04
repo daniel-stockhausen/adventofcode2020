@@ -2,8 +2,8 @@ import unittest
 
 from aoc.day01.day01 import product_of_2_summands_of_sum, product_of_3_summands_of_sum
 
-file_input = '../input/day01.txt'
-file_example = '../input/day01-example.txt'
+file_input = 'input/day01.txt'
+file_example = 'input/day01-example.txt'
 
 
 class TestDay01(unittest.TestCase):
