@@ -26,8 +26,8 @@ def multiply_trees_on_slopes(filename: str, slopes: tuple) -> int:
 
 
 if __name__ == '__main__':
-    part1 = count_trees_on_slope('../../input/day03.txt', (3, 1))
+    part1 = count_trees_on_slope('input/day03.txt', (3, 1))
     print(f"Part 1: {part1}")
 
-    part2 = multiply_trees_on_slopes('../../input/day03.txt', ((1, 1), (3, 1), (5, 1), (7, 1), (1, 2)))
+    part2 = multiply_trees_on_slopes('input/day03.txt', ((1, 1), (3, 1), (5, 1), (7, 1), (1, 2)))
     print(f"Part 2: {part2}")

@@ -26,8 +26,8 @@ def product_of_3_summands_of_sum(filename: str, sum: int) -> int:
 
 
 if __name__ == '__main__':
-    part1 = product_of_2_summands_of_sum('../../input/day01.txt', 2020)
+    part1 = product_of_2_summands_of_sum('input/day01.txt', 2020)
     print(f"Part 1: {part1}")
 
-    part2 = product_of_3_summands_of_sum('../../input/day01.txt', 2020)
+    part2 = product_of_3_summands_of_sum('input/day01.txt', 2020)
     print(f"Part 2: {part2}")
