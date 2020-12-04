@@ -1,3 +1,4 @@
+import os
 import unittest
 
 from aoc.day01.day01 import product_of_2_summands_of_sum, product_of_3_summands_of_sum
@@ -18,3 +19,6 @@ class TestDay01(unittest.TestCase):
 
     def test_01b(self):
         self.assertEqual(232508760, product_of_3_summands_of_sum(file_input, 2020))
+
+    def test_01_main(self):
+        self.assertEqual(512, os.system("python aoc.day01"))
