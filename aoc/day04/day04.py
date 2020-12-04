@@ -31,13 +31,11 @@ def has_required_keys_and_valid_values(passport: dict) -> bool:
     if not 2020 <= int(passport['eyr']) <= 2030:
         return False
 
-    match_hgt_cm = re.compile("^([0-9]{3})cm$").match(passport['hgt'])
-    match_hgt_in = re.compile("^([0-9]{2})in$").match(passport['hgt'])
-    if match_hgt_cm:
-        if not 150 <= int(match_hgt_cm.group(1)) <= 193:
+    match_hgt = re.compile("^([0-9]{2,3})(cm|in)$").match(passport['hgt'])
+    if match_hgt:
+        if match_hgt.group(2) == 'cm' and not 150 <= int(match_hgt.group(1)) <= 193:
             return False
-    elif match_hgt_in:
-        if not 59 <= int(match_hgt_in.group(1)) <= 76:
+        if match_hgt.group(2) == 'in' and not 59 <= int(match_hgt.group(1)) <= 76:
             return False
     else:
         return False
