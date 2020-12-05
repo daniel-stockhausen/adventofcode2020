@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from day05.day05 import Seat, extract_seats, highest_seat_id, find_missing_seat_id_with_neighbors
+from aoc.day05.day05 import Seat, extract_seats, highest_seat_id, find_missing_seat_id_with_neighbors
 
 file_input = 'input/day05.txt'
 file_example = 'input/day05-example.txt'
