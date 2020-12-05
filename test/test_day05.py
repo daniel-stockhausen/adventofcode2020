@@ -5,6 +5,7 @@ from aoc.day05.day05 import Seat, extract_seats, highest_seat_id, find_missing_s
 
 file_input = 'input/day05.txt'
 file_example = 'input/day05-example.txt'
+file_invalid_cmd = 'input/day05-invalid-cmd.txt'
 
 
 class TestDay05(unittest.TestCase):
@@ -30,3 +31,7 @@ class TestDay05(unittest.TestCase):
 
     def test_05_main(self):
         self.assertEqual(0, os.system("python -m aoc.day05.day05"))
+
+    def test_invalid_command_char(self):
+        with self.assertRaises(ValueError):
+            extract_seats(file_invalid_cmd)

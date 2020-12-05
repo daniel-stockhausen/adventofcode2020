@@ -30,8 +30,7 @@ def binary_search(down_cmd: chr, up_cmd: chr, commands: str) -> int:
         elif cmd == up_cmd:
             min = min + math.ceil((max - min) / 2)
         else:
-            print(f'Error: invalid command character \'{cmd}\' in "{commands}"')
-            exit(1)
+            raise ValueError(f'Error: invalid command character \'{cmd}\' in "{commands}"')
 
     return min
 
