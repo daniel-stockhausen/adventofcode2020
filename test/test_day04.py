@@ -1,7 +1,8 @@
 import os
 import unittest
 
-from aoc.day04.day04 import count_passports_with_required_keys, count_passports_with_required_keys_and_valid_values
+from aoc.day04.day04 import count_passports_with_required_keys, count_passports_with_required_keys_and_valid_values, \
+    validate_hgt
 
 file_input = 'input/day04.txt'
 file_example = 'input/day04-example.txt'
@@ -27,3 +28,9 @@ class TestDay04(unittest.TestCase):
 
     def test_04_main(self):
         self.assertEqual(0, os.system("python -m aoc.day04.day04"))
+
+    def test_04_validate_hgt(self):
+        self.assertTrue(validate_hgt('60in'))
+        self.assertTrue(validate_hgt('190cm'))
+        self.assertFalse(validate_hgt('190in'))
+        self.assertFalse(validate_hgt('190'))

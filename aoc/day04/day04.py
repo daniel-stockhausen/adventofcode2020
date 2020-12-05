@@ -1,5 +1,15 @@
 import re
 
+validations = {
+    'hcl': lambda x: re.compile("^#[0-9a-f]{6}$").match(x),
+    'byr': lambda x: 1920 <= int(x) <= 2002,
+    'iyr': lambda x: 2010 <= int(x) <= 2020,
+    'eyr': lambda x: 2020 <= int(x) <= 2030,
+    'ecl': lambda x: x in ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'],
+    'hgt': lambda x: validate_hgt(x),
+    'pid': lambda x: re.compile("^[0-9]{9}$").match(x),
+}
+
 
 def process_input(filename: str) -> tuple:
     with open(filename) as f:
@@ -15,36 +25,20 @@ def has_required_keys(passport: dict) -> bool:
     return required_keys.issubset(present_keys)
 
 
+def validate_hgt(hgt: str) -> bool:
+    match_hgt = re.compile("^([0-9]{2,3})(cm|in)$").match(hgt)
+    valid_cm = match_hgt and match_hgt.group(2) == 'cm' and 150 <= int(match_hgt.group(1)) <= 193
+    valid_in = match_hgt and match_hgt.group(2) == 'in' and 59 <= int(match_hgt.group(1)) <= 76
+    return valid_cm or valid_in
+
+
 def has_required_keys_and_valid_values(passport: dict) -> bool:
     if not has_required_keys(passport):
         return False
 
-    if not re.compile("^#[0-9a-f]{6}$").match(passport['hcl']):
-        return False
-
-    if not 1920 <= int(passport['byr']) <= 2002:
-        return False
-
-    if not 2010 <= int(passport['iyr']) <= 2020:
-        return False
-
-    if not 2020 <= int(passport['eyr']) <= 2030:
-        return False
-
-    match_hgt = re.compile("^([0-9]{2,3})(cm|in)$").match(passport['hgt'])
-    if match_hgt:
-        if match_hgt.group(2) == 'cm' and not 150 <= int(match_hgt.group(1)) <= 193:
+    for key, validation in validations.items():
+        if not validation(passport[key]):
             return False
-        if match_hgt.group(2) == 'in' and not 59 <= int(match_hgt.group(1)) <= 76:
-            return False
-    else:
-        return False
-
-    if passport['ecl'] not in ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']:
-        return False
-
-    if not re.compile("^[0-9]{9}$").match(passport['pid']):
-        return False
 
     return True
 
