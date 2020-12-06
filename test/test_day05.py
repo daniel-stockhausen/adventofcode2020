@@ -9,7 +9,6 @@ file_invalid_cmd = 'input/day05-invalid-cmd.txt'
 
 
 class TestDay05(unittest.TestCase):
-
     def test_05a_example_compare_seats(self):
         expected_seats = (
             Seat(44, 5, 357),
