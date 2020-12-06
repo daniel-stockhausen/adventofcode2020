@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from day06.day06 import count_questions_answered_yes
+from aoc.day06.day06 import count_questions_answered_yes
 
 file_input = 'input/day06.txt'
 file_example = 'input/day06-example.txt'
