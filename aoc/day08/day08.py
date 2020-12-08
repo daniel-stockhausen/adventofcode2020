@@ -49,9 +49,6 @@ def fix_bug_get_acc(filename: str) -> int:
     next_line_to_change = 0
 
     while True:
-        if next_line_to_change == len(code):
-            break
-
         exit_code, accumulator = execute(code)
         if exit_code != 0:
             code = deepcopy(original_code)
